@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.HexagonalArchiPattern.Core", "SGE.HexagonalArchiPattern.Core\SGE.HexagonalArchiPattern.Core.csproj", "{39B43B47-2A88-41E7-BA22-1E5FDD5860E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.HexagonalArchiPattern.Messaging", "SGE.HexagonalArchiPattern.Messaging\SGE.HexagonalArchiPattern.Messaging.csproj", "{3F45B2AB-88BA-49B0-BE5C-136AB6E42CD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.HexagonalArchiPattern.Persistence", "SGE.HexagonalArchiPattern.Persistence\SGE.HexagonalArchiPattern.Persistence.csproj", "{E8A744B5-0918-47F0-96B2-344E9198380E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.HexagonalArchiPattern.API", "SGE.HexagonalArchiPattern.API\SGE.HexagonalArchiPattern.API.csproj", "{A2FC502D-1438-44B6-BD49-72F3F00E43E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Clients", "2.Clients", "{130FD15E-5462-4681-A3A3-27ED42EA33BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.StudentConsumer.WPF", "SGE.StudentConsumer.WPF\SGE.StudentConsumer.WPF.csproj", "{FFA3140F-5C9E-44D0-AD82-DEF6A5508776}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGE.EmployeeConsumer.WINFORM", "SGE.EmployeeConsumer.WINFORM\SGE.EmployeeConsumer.WINFORM.csproj", "{516A48B4-6528-4B9D-BCF2-B25D87048463}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39B43B47-2A88-41E7-BA22-1E5FDD5860E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39B43B47-2A88-41E7-BA22-1E5FDD5860E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39B43B47-2A88-41E7-BA22-1E5FDD5860E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39B43B47-2A88-41E7-BA22-1E5FDD5860E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F45B2AB-88BA-49B0-BE5C-136AB6E42CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F45B2AB-88BA-49B0-BE5C-136AB6E42CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F45B2AB-88BA-49B0-BE5C-136AB6E42CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F45B2AB-88BA-49B0-BE5C-136AB6E42CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8A744B5-0918-47F0-96B2-344E9198380E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8A744B5-0918-47F0-96B2-344E9198380E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8A744B5-0918-47F0-96B2-344E9198380E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8A744B5-0918-47F0-96B2-344E9198380E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FC502D-1438-44B6-BD49-72F3F00E43E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FC502D-1438-44B6-BD49-72F3F00E43E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FC502D-1438-44B6-BD49-72F3F00E43E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FC502D-1438-44B6-BD49-72F3F00E43E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA3140F-5C9E-44D0-AD82-DEF6A5508776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA3140F-5C9E-44D0-AD82-DEF6A5508776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA3140F-5C9E-44D0-AD82-DEF6A5508776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA3140F-5C9E-44D0-AD82-DEF6A5508776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{516A48B4-6528-4B9D-BCF2-B25D87048463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{516A48B4-6528-4B9D-BCF2-B25D87048463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{516A48B4-6528-4B9D-BCF2-B25D87048463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{516A48B4-6528-4B9D-BCF2-B25D87048463}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFA3140F-5C9E-44D0-AD82-DEF6A5508776} = {130FD15E-5462-4681-A3A3-27ED42EA33BB}
+		{516A48B4-6528-4B9D-BCF2-B25D87048463} = {130FD15E-5462-4681-A3A3-27ED42EA33BB}
+	EndGlobalSection
+EndGlobal

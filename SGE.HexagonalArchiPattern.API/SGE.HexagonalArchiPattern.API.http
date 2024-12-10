@@ -1,0 +1,6 @@
+@SGE.HexagonalArchiPattern.API_HostAddress = http://localhost:5162
+
+GET {{SGE.HexagonalArchiPattern.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

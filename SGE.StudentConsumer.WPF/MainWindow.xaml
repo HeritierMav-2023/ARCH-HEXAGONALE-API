@@ -1,0 +1,123 @@
+﻿<Window x:Class="SGE.StudentConsumer.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SGE.StudentConsumer.WPF"
+        mc:Ignorable="d"
+        Height="500" Width="700">
+    <StackPanel Orientation="Vertical">
+        <GroupBox Header="Student Form" Margin="10">
+            <Grid Height="150">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Zone Data Entry-->
+                <Label Content="FirstName" HorizontalAlignment="Left" 
+                   VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="TextBoxName" Height="27" 
+                   Text="{Binding Path=FirstName, Mode=TwoWay}"  
+                     Margin="5"  Width="300" 
+                     HorizontalAlignment="Left"/>
+
+                <Label Content="LastName" HorizontalAlignment="Left" 
+                   VerticalContentAlignment="Center" 
+                   Grid.Row="1" Grid.Column="0"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Height="27" 
+                   Text="{Binding Path=LastName, Mode=TwoWay}" 
+                     Margin="5" Width="300" 
+                     HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="1" x:Name="TextBlockId" 
+                   Visibility="Hidden" Text="{Binding Path=Id, Mode=TwoWay}"/>
+
+                <Label Content="Email" HorizontalAlignment="Left" 
+                   VerticalContentAlignment="Center" 
+                   Grid.Row="2" Grid.Column="0" />
+                <TextBox Grid.Row="2" Grid.Column="1" Height="27" 
+                   Text="{Binding Path=Email, Mode=TwoWay}" 
+                     Margin="5" Width="300" 
+                     HorizontalAlignment="Left"/>
+
+                <Label Content="DateOfBirth" HorizontalAlignment="Left"
+                   VerticalContentAlignment="Center" 
+                   Grid.Row="3" Grid.Column="0" />
+                <DatePicker Grid.Row="3" Grid.Column="1" Height="27"
+                   Text="{Binding Path=DateOfBirth, Mode=TwoWay}" 
+                        Margin="5" Width="300" 
+                        HorizontalAlignment="Left"/>
+            </Grid>
+        </GroupBox>
+        <!--Zone Button-->
+        <StackPanel Height="40" Orientation="Horizontal" 
+                HorizontalAlignment="Right">
+            <Button  Content="Save" Height="30" Width="80"
+                Command="{Binding SaveCommand}"/>
+            <Button Content="Cancel" Height="30" Width="80" 
+                Command="{Binding ResetCommand}" Margin="5,0,10,0"/>
+        </StackPanel>
+        
+        <!--Zone Grille-->
+        <StackPanel Height="auto">
+            <DataGrid x:Name="DataGridStudents" 
+                  Style="{DynamicResource DataGridStyle1}"  
+                  CellStyle="{DynamicResource DataGridCellStyle1}" 
+                  RowStyle="{DynamicResource DataGridRowStyle2}" 
+                  ItemsSource="{Binding Students}" 
+                  CanUserAddRows="False" Height="200" Margin="10">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn CanUserResize="False" Width="auto" ElementStyle="{StaticResource CheckBoxStyle1}">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Style="{StaticResource CheckBoxStyle1}"/>
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Path=Id}"/>
+                    <DataGridTextColumn Header="FIRST NAME" Binding="{Binding Path=FirstName}" Width="*"  IsReadOnly="True" Foreground="black"/>
+                    <DataGridTextColumn Header="LAST NAME" Binding="{Binding Path=LastName}" Width="*"  IsReadOnly="True"/>
+                    <DataGridTextColumn Header="EMAIL" Binding="{Binding Path=Email}" Width="*" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="DATE OF BIRTH" Binding="{Binding Path=DateOfBirth, StringFormat=\{0:dd.MM.yyyy\}}" Width="*" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="OPERATIONS" Width="*" IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                    <Button 
+                                    Style="{StaticResource gridEditButton}" 
+                                    CommandParameter="{Binding Path=Id}"
+                                    Command="{Binding Path=DataContext.EditCommand,
+                                    RelativeSource={RelativeSource FindAncestor,
+                                    AncestorType=Window}}">
+                                        <Icon:PackIconMaterial 
+                                        Kind="PencilOffOutline" 
+                                        Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                    <Button 
+                                    x:Name="ButtonDelete"
+                                    Style="{StaticResource gridRemoveButton}"
+                                    CommandParameter="{Binding Path=Id}"
+                                    Command="{Binding Path=DataContext.DeleteCommand, 
+                                    RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}">
+                                        <Icon:PackIconMaterial Kind="DeleteOffOutline" 
+                                                           Style="{StaticResource gridButtonIcon}"/>
+                                    </Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </StackPanel>
+</Window>
