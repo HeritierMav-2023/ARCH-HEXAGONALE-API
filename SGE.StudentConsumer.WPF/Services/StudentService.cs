@@ -29,9 +29,9 @@ namespace SGE.StudentConsumer.WPF.Services
         /// </summary>
         /// <param name="studentModel"></param>
         /// <returns></returns>
-        public async Task DeleteTask(StudentModel studentModel)
+        public async Task DeleteTask(int id)
         {
-            string URL = URLbase + "/Delete/" + studentModel.Id;
+            string URL = URLbase + "/Delete/"+ id;
 
             using (var httpClient = new HttpClient())
             {

@@ -238,10 +238,11 @@ namespace SGE.StudentConsumer.WPF.ViewModels
 
         public void DeleteStudent(int id)
         {
-            if (StudentModel.Id == id) 
+            if(id != 0)
             {
-              _studentService.DeleteTask(StudentModel);
-               MessageBox.Show("New record deleted successfully.");
+               _studentService.DeleteTask(id);
+                MessageBox.Show("New record deleted successfully.");
+                GetAll();
             }
         }
         #endregion

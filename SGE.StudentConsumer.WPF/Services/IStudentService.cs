@@ -7,7 +7,7 @@ namespace SGE.StudentConsumer.WPF.Services
 {
     public interface IStudentService
     {
-        Task DeleteTask(StudentModel studentModel);
+        Task DeleteTask(int id);
         List<StudentModel> GetAllStudent();
         Task SaveTask(StudentModel studentModel);
         Task UpdateTask(StudentModel studentModel);
